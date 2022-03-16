@@ -1,0 +1,32 @@
+table,tr,td,th{
+	border:1px solid black;
+	border-collapse: collapse;
+	z-index: 0;
+}
+td,tr{
+	padding-left: 10px;
+}
+a{
+	text-decoration: none;
+}
+.marginBody{
+	padding: 10px;
+}
+.flexParent{
+	display: flex;
+}
+.lastFlexChild{
+	margin-left: auto;
+	align-self: flex-end;
+}
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 20%;
+}
+.modal-content{
+    width:200%;
+    margin-left: -50%;
+}
