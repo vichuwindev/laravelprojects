@@ -17,12 +17,24 @@ class ReportController extends Controller
     public function listItems(Request $request){
 			DB::select('use vishnudevdb');
 			DB::select('show tables');
-			$datas = DB::select('select * from vishnu_ngl where customer_id is not null');
+			$datas = DB::select('select * from vishnu_ngl');
 			return view('firstPage')->with(['datas'=>$datas]);
     }
  	public function AddItems(Request $request){
  		$data = $request->input('data');
-		$result = $this->vishnu_ngl->AddItems($data);
+        $mode=$request->input('mode');
+        $id=$request->input('id');
+        Log::warning($data);
+		$result = $this->vishnu_ngl->AddItems($data,$mode,$id);
 		return $result;	
     }   
+    public function listBankTxn(Request $request){
+    	return view('bankTxn');
+    }
+    public function listBankTxnData(Request $request){
+    	$bankTxnSql = 'select * from bank_tnx_table';
+    	$bankTxnResult = DB::select($bankTxnSql);
+    	Log::warning($bankTxnResult);
+    	return response()->json(["status"=>true,"bankTxnResult"=>$bankTxnResult]);
+    }
 }

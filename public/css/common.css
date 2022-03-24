@@ -15,9 +15,15 @@ a{
 .flexParent{
 	display: flex;
 }
+.flexChild{
+	margin-left: 5px;
+}
 .lastFlexChild{
 	margin-left: auto;
 	align-self: flex-end;
+}
+.firstFlexChild{
+	margin-right: auto;
 }
 .input-group {
     position: relative;
@@ -26,7 +32,9 @@ a{
     align-items: stretch;
     width: 20%;
 }
-.modal-content{
-    width:200%;
-    margin-left: -50%;
+.row{
+	padding:0 0 0 5px;
+}
+.dateTimeWidth{
+	width: 50px;
 }

@@ -21,5 +21,14 @@ Route::get('/', function () {
 // Route::get('/',function(){
 // 	return view('firstPage');
 // });
-Route::get('/', [ReportController::class, 'listItems']);
+Route::get('/', [ReportController::class, 'listItems'])->name('productList');
 Route::post('/AddItems',[ReportController::class,'AddItems']);
+Route::get('/bankTxnList',[ReportController::class,'listBankTxn'])->name('bankTxnList');
+Route::post('/bankTxnListDatas',[ReportController::class,'listBankTxnData']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
